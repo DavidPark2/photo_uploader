@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/', 'PhotoController@index');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/photo', 'PhotoController@index');
+Route::post('/photo', 'PhotoController@store');
