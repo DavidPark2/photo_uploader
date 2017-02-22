@@ -8,13 +8,14 @@ class PhotoController extends Controller
 {
     public function index()
     {
+
         return view('photos.index');
     }
 
     public function store()
     {
-        request()->file('photo')->store('photos');
+        $photoOyea = request()->file('photo')->store('public');
 
-        return back();
+        dd($photoOyea);
     }
 }
